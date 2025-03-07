@@ -1,0 +1,428 @@
+/* --------------------------------------------------------------------------
+   Color Scheme & Global Variables
+-------------------------------------------------------------------------- */
+:root {
+    /* Primary and secondary colors for the website */
+    --primary-color: #693c3c;          /* Rich Brown for depth */
+    --secondary-color: #f4f4f4;        /* Soft Gray for contrast */
+    --accent-color: #ff6ec7;           /* Vibrant Neon Pink */
+    --hover-color: #e74c3c;            /* Coral Red for hover effects */
+    --background-color: #ffffff;       /* Clean white background */
+    --text-color: #222222;             /* Deep black text */
+    --border-color: #ddd;              /* Subtle border color */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+/* --------------------------------------------------------------------------
+   Global Reset & Base Styles
+-------------------------------------------------------------------------- */
+* {
+    /* Reset margin, padding, and set box-sizing to border-box for all elements */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scrollbar-width: none; /* Disable native scrollbar for a cleaner design */
+}
+
+*::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for webkit browsers */
+}
+
+body {
+    background-color: var(--background-color); /* Set background color */
+    color: var(--text-color); /* Set text color */
+    padding-top: 80px; /* Space for navbar */
+    text-align: center;
+    position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   Navbar Styling & Position Fix
+-------------------------------------------------------------------------- */
+.navbar {
+    display: flex; /* Flexbox for navbar */
+    align-items: center; /* Center align navbar items */
+    justify-content: space-between; /* Distribute items evenly */
+    z-index: 1000; /* Keep navbar on top */
+    width: 100%; /* Full width */
+    height: 60px; /* Navbar height */
+    padding: 10px 50px; /* Padding inside navbar */
+    position: fixed; /* Fixed navbar at the top */
+    top: 0;
+    left: 0;
+    background: var(--primary-color); /* Navbar background */
+    color: white; /* Text color */
+    box-shadow: 0px 4px 10px var(--shadow-color); /* Soft shadow under navbar */
+}
+
+.navbar ul {
+    display: flex; /* Flexbox for navbar items */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px; /* Space between navbar items */
+    list-style: none; /* Remove list bullet */
+}
+
+.navbar ul li a {
+    background-color: #b46e6e; /* Button background */
+    border:none;
+    border-radius: 12px; /* Rounded buttons */
+    font-size: 18px;
+    text-transform: uppercase; /* Uppercase text */
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underlines */
+    padding: 8px 15px; /* Button padding */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.navbar ul li a:hover {
+    background: var(--hover-color); /* Hover background color */
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px var(--hover-color); /* Hover shadow */
+}
+
+/* --------------------------------------------------------------------------
+   Main Content with Enhanced Styling
+-------------------------------------------------------------------------- */
+.maincontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%; /* Content width */
+    background: var(--secondary-color); /* Light gray background */
+    padding: 30px; /* Padding inside content */
+    margin: 100px auto; /* Center the content */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 10px 10px 30px var(--shadow-color); /* Shadow for depth */
+    text-align: center;
+    position: relative;
+}
+
+.incontainers, .audio-section {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center; /* Center content */
+    background: white; /* White background for sections */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px var(--shadow-color); /* Shadow for depth */
+    margin-bottom: 20px; /* Space between sections */
+    transition: all 0.3s ease-in-out; /* Smooth hover transition */
+}
+
+#cont1 {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.incontainers:hover {
+    box-shadow: 5px 5px 25px var(--primary-color); /* Hover shadow */
+    transform: scale(1.02); /* Slightly zoom in on hover */
+}
+
+/* --------------------------------------------------------------------------
+   Footer Styling with Animated Effect
+-------------------------------------------------------------------------- */
+.footer {
+    width: 100%;
+    height: 100px;
+    padding: 15px;
+    background: var(--primary-color); /* Footer background */
+    color: white; /* Text color */
+    box-shadow: 0px -4px 10px var(--shadow-color); /* Shadow on top */
+    text-align: center;
+}
+
+.footer p:hover {
+    color: var(--hover-color); /* Hover text color */
+    text-shadow: 0 0 8px var(--hover-color); /* Hover text glow effect */
+}
+
+ul {
+    list-style-type: none; /* Remove list bullet */
+}
+
+img {
+    width: 200px;
+    height: auto; /* Image resizing */
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design Adjustments
+-------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .maincontainer {
+        width: 90%; /* Adjust main container width on small screens */
+    }
+
+    nav {
+        flex-direction: row; /* Navbar items side by side */
+        height: auto;
+        padding: 15px;
+    }
+
+    .navbar ul {
+        flex-direction: row; /* Horizontal list */
+        gap: 10px; /* Space between navbar items */
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Additional Fixes & Enhancements
+-------------------------------------------------------------------------- */
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.image-container, .stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.image-container img {
+    width: 250px; /* Image size */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out; /* Hover zoom effect */
+    box-shadow: 0px 4px 12px var(--shadow-color); /* Shadow for depth */
+}
+
+.image-container img:hover {
+    transform: scale(1.05); /* Zoom in on hover */
+    box-shadow: 0px 4px 15px var(--hover-color); /* Hover shadow effect */
+}
+
+.stats ul {
+    background: var(--primary-color); /* Stats background */
+    color: white;
+    padding: 15px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 12px var(--shadow-color); /* Shadow for depth */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.stats ul:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0px 4px 15px var(--hover-color); /* Hover shadow effect */
+}
+
+.stats li {
+    list-style: none;
+    padding: 5px 0; /* Padding for list items */
+    font-weight: bold;
+}
+
+.description-text {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-color); /* Description text color */
+}
+
+.maincontainer {
+    width: 85%;
+    background: var(--secondary-color); /* Main content background */
+    padding: 30px;
+    margin: 80px auto 50px auto; /* Adjusted margin */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 10px 10px 30px var(--shadow-color); /* Shadow effect */
+    text-align: center;
+    position: relative;
+}
+
+.navbar {
+    height: 70px; /* Adjust navbar height */
+    padding: 15px 50px; /* Adjust padding */
+}
+
+.footer {
+    margin-top: 50px;
+    padding: 20px; /* Footer padding */
+}
+
+.divider {
+    align-self: center;
+    background: white; /* Divider background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px var(--shadow-color); /* Shadow effect */
+    margin-bottom: 20px; /* Space below divider */
+    transition: all 0.3s ease-in-out;
+    width: 80%; /* Divider width */
+}
+
+.p-12 {
+    padding: 12px;
+    margin: 0;
+    background: rgb(235, 235, 235); /* Background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 5px 5px 15px var(--shadow-color); /* Shadow effect */
+    margin-bottom: 20px; /* Space below section */
+    transition: all 0.3s ease-in-out;
+    width: 80%; /* Section width */
+    align-items: center; /* Center content */
+}
+
+/* --------------------------------------------------------------------------
+   Special Edit Video Section
+-------------------------------------------------------------------------- */
+.video-container {
+    width: 90%;
+    max-width: 900px;
+    background: var(--primary-color); /* Video section background */
+    color: white;
+    padding: 30px;
+    margin: 50px auto; /* Center content */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0px 5px 15px var(--shadow-color); /* Shadow for depth */
+    text-align: center;
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.video-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px; /* Space below heading */
+}
+
+.video-container p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: var(--secondary-color); /* Text color */
+}
+
+.video-container video {
+    width: 50%;
+    max-width: 800px; /* Video size */
+    border-radius: 10px; /* Rounded video corners */
+    box-shadow: 0px 4px 12px var(--hover-color); /* Shadow effect */
+}
+
+.video-container:hover {
+    transform: scale(1.02); /* Zoom effect on hover */
+    box-shadow: 0px 5px 20px var(--hover-color); /* Hover shadow effect */
+}
+
+/* Make video responsive */
+@media (max-width: 768px) {
+    .video-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .video-container video {
+        width: 100%; /* Full-width video on small screens */
+    }
+    .navbar ul li a {
+        background: var(--hover-color);
+        border-radius: 5px;
+        box-shadow: 0px 4px 8px var(--hover-color);
+    }
+
+    .incontainers {
+        box-shadow: 5px 5px 25px var(--primary-color);
+        transform: scale(1.02);
+    }
+
+    .image-container img {
+        transform: scale(1.05);
+        box-shadow: 0px 4px 15px var(--hover-color);
+    }
+
+    
+    .stats ul {
+        transform: scale(1.05);
+        box-shadow: 0px 4px 15px var(--hover-color);
+    }
+
+ 
+    .video-container {
+        transform: scale(1.02);
+        box-shadow: 0px 5px 20px var(--hover-color);
+    }
+
+   
+
+    }
+
+/* --------------------------------------------------------------------------
+   Popup/Overlay Style
+-------------------------------------------------------------------------- */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay background */
+    filter: blur(5px); /* Blur background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Make sure the popup is on top */
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Initially invisible */
+    transition: opacity 0.3s ease, visibility 0s 0.3s; /* Smooth transition */
+}
+
+/* Popup Content Style */
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    z-index: 10000; /* Popup content on top */
+}
+
+.popup-content strong {
+    color: #e63946; /* Highlighted text color */
+}
+
+/* Blurring background (but not the overlay) */
+.blurred-background {
+    filter: blur(0px); /* Disable blur on the background */
+}
+
+.close-btn {
+    background-color: #e63946; /* Close button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px; /* Space above the button */
+}
+
+/* Close button hover effect */
+.close-btn:hover {
+    background-color: #d62828;
+}
+
+/* Stop the popup from being blurred */
+.overlay, .popup-content {
+    filter: none; /* No blur effect on the popup */
+}
+
+#logotxt {
+    padding: 12px;
+    margin: 0;
+    background: rgb(84, 45, 45);
+    border:none;
+    border-radius: 12px;
+}

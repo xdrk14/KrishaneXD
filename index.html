@@ -1,0 +1,145 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Krishane</title> 
+    <link rel="stylesheet" href="src/stylesheets/mainstylesheet.css"> 
+    <script src="src/scripts/mainscript.js" defer></script> 
+    <link rel="icon" href="src/images/logo.jpg" type="image/x-icon">
+    <link rel="icon" href="src/images/logo.jpg" type="image/x-icon">
+</head> 
+<body> 
+    <header class="navbar"> 
+        <p id="logotxt" class="text-description"><b>Krishane Pintoe</b></p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li> 
+                <li><a href="exclusive.html">Exclusive</a></li>
+            </ul>
+        </nav>
+    </header> 
+
+    <main class="maincontainer">
+        <section class="incontainers">
+            <h2>YO YO YO, IT'S YA BOY KRISHANE! 🕺💃</h2>
+            <br>
+            <section id="cont1"> 
+                <div class="flex-container">
+                    <section class="image-container">
+                        <img src="src/images/boot1.jpg" alt="Krishane Pintoe">
+                    </section>
+                    <section class="stats">
+                        <ul>Top Stats
+                            <li>Gay 🌈</li>
+                            <li>LGBTQ++ Certified™</li>
+                            <li>Horny 24/7/12 🤤</li>
+                            <li>Bisexual Chaos Gremlin</li>
+                            <li>Zestiest Human Alive 💅</li>
+                        </ul> 
+                    </section>
+                </div>
+                <section class="divider">
+                    <p class="description-text">Welcome to my unhinged self. If you expected sanity, turn back now. If you love chaos, screaming, and Skibidi Toilet brain rot, YOU'RE IN THE RIGHT PLACE. 🤡💀</p>
+                </section>  
+            </section>  
+        </section> 
+
+        <section class="incontainers">
+            <h2>About me (aka why I'm iconic)</h2>
+            <section class="divider">
+                <ul>
+                    <li>Obviously Gay (like, DUH) 🌈</li>
+                    <li>Love moaning unironically ONG 😩</li>
+                    <li>Professional Mom Roaster 🔥</li>
+                    <li>Main Character Energy ✨</li>
+                </ul>
+                <p><i>I'm basically a living, breathing reality TV show. You never know what’s gonna happen next. Maybe I’ll start twerking in the middle of Keels. Maybe I’ll scream something random.🤸</i></p>
+            </section>
+        </section> 
+
+        <section class="incontainers">
+            <h2>Favourite Images (aka a visual representation of me)</h2>
+            <div class="image-gallery">
+                <img src="src/images/boot2.jpg" alt="Image 1">
+                <img src="src/images/boot3.jpg" alt="Image 2">
+            </div>
+            <section class="divider">
+                <p>dis me. 📸🔥</p>
+            </section>  
+        </section> 
+
+        <section class="incontainers">
+            <h2>Sounds I Love Making (love doing dis sht)</h2>
+            <div class="audio-gallery">
+                <audio controls>
+                    <source src="src/audios/aud1.MP3" type="audio/mpeg"> 
+                </audio>
+                <audio controls>
+                    <source src="src/audios/aud2const.MP3" type="audio/mpeg"> 
+                </audio>
+                <audio controls>
+                    <source src="src/audios/aud3.MP3" type="audio/mpeg"> 
+                </audio>
+            </div>
+            <section class="divider">
+                <p>POV: You are the Ultimate Skibidi Rizzler. 🔊📢</p>
+            </section>
+        </section> 
+    </main> 
+
+    <footer class="footer"> 
+        <p>Contact me at: +76 183-256-7560</p> 
+        <p>Text me, call me, please im desperate. Just don’t be weird. Or do. I like weird people. 🤪</p>
+    </footer> 
+    <div class="overlay" id="popup">
+        <div class="popup-content">
+            <p><strong>⚠️ Disclaimer ⚠️</strong></p>
+            <p>Welcome to this Project! Please note that this website is purely a joke. If you're looking for something serious, you’re in the wrong place. Prepare for chaos, memes, and a whole lot of weirdness. Proceed with caution, and remember: <strong>Don’t take any of this seriously. It's all for fun!</strong> 🤡💀</p>
+            <button class="close-btn" onclick="closePopup()">I Accept. Let Me In!</button>
+        </div>
+    </div>
+    <script>
+        let state = false;
+        function scrollToMiddle() {
+    // Get the height of the document
+            var bodyHeight = document.body.scrollHeight;
+
+            // Calculate the middle of the page
+            var middle = (bodyHeight / 2)-400;
+
+            // Scroll to the middle
+            window.scrollTo({
+                top: middle, // Scroll to the calculated middle
+                behavior: 'smooth' // Smooth scroll effect
+            });
+        }
+        // Function to show the popup and apply the blur effect
+        window.onload = function() {
+            
+            // Show the popup
+            document.getElementById('popup').style.visibility = 'visible';
+            document.getElementById('popup').style.opacity = '1';
+            
+            
+            // Scroll to the middle of the page
+            scrollToMiddle();
+            // Apply blur effect to the body content
+            document.body.classList.add('blurred-background');
+        };
+
+        // Function to close the popup and remove the blur effect
+        function closePopup() {
+            state=true; // Stop the interval when the popup is closed
+            // Hide the popup
+            document.getElementById('popup').style.visibility = 'hidden';
+            document.getElementById('popup').style.opacity = '0';
+            // Scroll to the top of the page
+            window.scrollTo(0, 0);
+            
+            // Remove the blur effect from the body content
+            document.body.classList.remove('blurred-background');
+        }
+    </script>
+</body> 
+</html>
